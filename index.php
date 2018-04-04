@@ -28,10 +28,10 @@ $movies = $query->fetchAll();
             <div class="card mb-4 box-shadow">
             <img class="card-img-top" data-src="" alt="" style="height: 225px; width: 100%; display: block;" src="https://d32xvgr96w2oxp.cloudfront.net/2016/05/sphynx-04-2016.jpg" data-holder-rendered="true">
             <div class="card-body">
-            <p class="card-text"><?php echo $movie['plot']; ?></p>
+            <p class="h5"><?php echo $movie['title']; ?></p>
             <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-            <input value="Voir les détails" href="detail.php<?php echo dsfyh ?>" type="button" class="btn btn-sm btn-info"></input>
+            <input value="Voir les détails" href="detail.php?id=<?php echo dsfyh ?>" type="button" class="btn btn-sm btn-info"></input>
             </div>
             <small class="text-muted">Il y'a <?php echo $movie['created']; ?></small>
           </div>
