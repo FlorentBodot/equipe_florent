@@ -3,10 +3,7 @@
 include('inc/header.php');
 
 
-<<<<<<< HEAD
-include('inc/footer.php');
-=======
->>>>>>> 09dd2c6f948b0dba17339b754a88ba17da2de1f8
+
 
 ?>
 
@@ -43,3 +40,5 @@ include('inc/footer.php');
       </div>
 
     </main>
+
+<?php include('inc/footer.php');
