@@ -4,13 +4,13 @@ include('inc/header.php');
 include('inc/pdo.php');
 include('inc/functions.php');
 
-$sql = "SELECT * FROM movies_full";
+$sql = "SELECT * FROM movies_full LIMIT 9";
 $query = $pdo->prepare($sql);
 $query->execute();
 $movies = $query->fetchAll();
 
-$picture = '/posters';
-$id = ['id'];
+
+
 
 // print_r($movies);
 
@@ -31,12 +31,12 @@ $id = ['id'];
           <?php foreach ($movies as $movie) { ?>
             <div class="col-md-4">
             <div class="card mb-4 box-shadow">
-              <?php uploadDataPictures($picture, $movie, $id) ?>
+              <?php uploadDataPictures( $movie['id']); ?>
             <div class="card-body">
             <p class="h5"><?php echo $movie['title']; ?></p>
             <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-            <input value="Voir les détails" href="detail.php?id=<?php echo dsfyh ?>" type="button" class="btn btn-sm btn-info"></input>
+            <button href="detail.php?id=<?php echo $movie['id'] ?>" class="btn btn-sm btn-info">Voir les détails</button>
             </div>
             <small class="text-muted">Il y'a <?php echo $movie['created']; ?></small>
           </div>
