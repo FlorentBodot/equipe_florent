@@ -2,11 +2,15 @@
 
 include('inc/header.php');
 include('inc/pdo.php');
+include('inc/functions.php');
 
 $sql = "SELECT * FROM movies_full";
 $query = $pdo->prepare($sql);
 $query->execute();
 $movies = $query->fetchAll();
+
+$picture = '/posters';
+$id = ['id'];
 
 // print_r($movies);
 ?>
@@ -20,13 +24,13 @@ $movies = $query->fetchAll();
         </div>
       </section>
 
-      <div class="album py-5 bg-light">
+      <div class="album py-5">
         <div class="container">
           <div class="row">
           <?php foreach ($movies as $movie) { ?>
             <div class="col-md-4">
             <div class="card mb-4 box-shadow">
-            <img class="card-img-top" data-src="" alt="" style="height: 225px; width: 100%; display: block;" src="" data-holder-rendered="true">
+              <?php uploadDataPictures($picture, $movie, $id) ?>
             <div class="card-body">
             <p class="h5"><?php echo $movie['title']; ?></p>
             <div class="d-flex justify-content-between align-items-center">
