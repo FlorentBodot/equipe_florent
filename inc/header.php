@@ -15,7 +15,6 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-item nav-link text-white" href="index.php">Accueil</a>
-            <a class="nav-item nav-link text-white" href="#">Chercher un film</a>
             <a class="nav-item nav-link text-white" href="dashboard.php">Administration</a>
           </div>
         </div>
