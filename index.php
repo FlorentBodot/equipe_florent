@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <h1>coucou jeremy</h1>
+    <h1>Bienvenue</h1>
 
     <h2>coucou benjamin</h2>
 
