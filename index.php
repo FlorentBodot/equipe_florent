@@ -8,7 +8,7 @@
 </head>
 <body>
 
-    <h1>COUCOU LES COUPAINS</h1>
+    <h1>COUCOU LES COUPINES</h1>
 
     <h2>coucou benjamin</h2>
 
