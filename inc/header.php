@@ -15,11 +15,18 @@
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
             <a class="nav-item nav-link text-white" href="index.php">Accueil</a>
-            <a class="nav-item nav-link text-white" href="#">Chercher un film</a>
             <a class="nav-item nav-link text-white" href="dashboard.php">Administration</a>
           </div>
         </div>
-    </nav>
 
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Rechercher un film" aria-label="Search">
+          <button class="btn btn-outline-light my-2 my-sm-0" href="register.php">Inscrivez-vous</button>
+          <li class="navbar navbar-expand-lg bg-info navbar-dark">
+            <button class="btn btn-outline-light my-2 my-sm-0" href="connection.php">Connectez-vous</a>
+            </li>
+        </form>
+
+      </nav>
   </body>
 </html>
