@@ -13,6 +13,7 @@ $picture = '/posters';
 $id = ['id'];
 
 // print_r($movies);
+
 ?>
 
 <main role="main">
