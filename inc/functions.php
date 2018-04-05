@@ -6,7 +6,7 @@ function uploadDataPictures( $id)
   if (file_exists($chemin)) { ?>
     <img class="card-img-top" src="posters/<?php echo $id ?>.jpg" alt=""> <?php
 } else { ?>
-    <img class="card-img-top" src="https://cdn.discordapp.com/attachments/425680443828862988/431060419109715970/images.jpg" alt="" style="height: 225px; width: 100%; display: block;"><?php
+    <img class="card-img-top" src="https://www.xl6.com/images/grande_image_inexistante.png" alt="" style="height: 225px; width: 100%; display: block;"><?php
   }
 }
 

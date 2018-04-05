@@ -4,7 +4,7 @@ include('inc/header.php');
 include('inc/pdo.php');
 include('inc/functions.php');
 
-$sql = "SELECT * FROM movies_full LIMIT 9";
+$sql = "SELECT * FROM movies_full ORDER BY RAND() LIMIT 100";
 $query = $pdo->prepare($sql);
 $query->execute();
 $movies = $query->fetchAll();
