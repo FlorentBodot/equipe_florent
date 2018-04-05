@@ -1,6 +1,7 @@
 <?php include('inc/pdo.php'); ?>
 <?php include('inc/functions.php'); ?>
 
+
 <?php
 $error = [];
 // formulaire soumis
@@ -82,9 +83,6 @@ if(!empty($_POST['submitregister'])) {
 ?>
 <?php include('inc/header.php'); ?>
 
-<style>
-    label {display:block}
-</style>
 
 <form action="" method="post">
   <label for="name">Name</label>
@@ -102,8 +100,8 @@ if(!empty($_POST['submitregister'])) {
   <label for="password2">Confirm Password</label>
   <input type="password" name="password2" value="<?php if(!empty($_POST['password2'])) { echo $_POST['password2']; } ?>">
   <span class="error"><?php if(!empty($error['password2'])) { echo $error['password2']; } ?></span>
-
-  <input type="submit" name="submitregister" value="envoyer">
+  
+  <input class="machin" type="submit" name="submitregister" value="envoyer">
 </form>
 
 
