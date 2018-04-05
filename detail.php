@@ -1,5 +1,5 @@
 <?php
-include('inc/function.php');
+include('inc/functions.php');
 include('inc/pdo.php');
 
 $error = array();
@@ -36,7 +36,7 @@ include('inc/header.php'); ?>
 <p class="auteur">Réalisateur : <?php echo $movie['directors']; ?> </p>
 <p class="auteur">Acteur(s) : <?php echo $movie['cast']; ?> </p>
 <p class="contenu">Scénariste(s) : <?php echo $movie['writers']; ?> </p>
-<p class="contenu">Durée: <?php echo $movie['writers']; ?> </p>
+<p class="contenu">Durée: <?php echo $movie['runtime']; ?> min</p>
 <p class="status">Synopsis : <?php echo $movie['plot']; ?> </p>                    
 <br>             
 </div>
