@@ -20,15 +20,14 @@
         <a class="nav-link" href="index.php">Accueil <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="statistiques.php">Statistiques</a>
+        <a class="nav-link" href="#stats">Statistiques</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="films.php">Gestion des films</a>
+        <a class="nav-link" href="#gestionf">Gestion des films</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="users.php">Gestion des utilisateurs</a>
+        <a class="nav-link" href="#gestionu">Gestion des utilisateurs</a>
       </li>
     </ul>
   </div>
 </nav>
-    
