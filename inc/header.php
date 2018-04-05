@@ -21,10 +21,15 @@
 
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Rechercher un film" aria-label="Search">
+<<<<<<< HEAD
           <a class="btn btn-outline-light my-2 my-sm-0" href="register.php">Inscrivez-vous</a>
           <li class="navbar navbar-expand-lg bg-info navbar-dark">
             <a class="btn btn-outline-light my-2 my-sm-0" href="connection.php">Connectez-vous</a>
             </li>
+=======
+          <a href="register.php">Inscription</a>
+          <a href="connection.php">Connexion</a>          
+>>>>>>> 3a0aac61b89eb2a771cc5d278afe718b9fe6b11e
         </form>
 
       </nav>
