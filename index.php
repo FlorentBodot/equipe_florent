@@ -30,7 +30,7 @@ $movies = $query->fetchAll();
       <div class="row">
         <?php foreach ($movies as $movie) { ?>
           <div class="col-md-4">
-            <div class="card mb-4 box-shadow"> 
+            <div class="card mb-4 box-shadow">
               <?php uploadDataPictures($movie['id']); ?>
               <div class="card-body">
                 <p class="h5"><?php echo $movie['title']; ?></p>
@@ -49,3 +49,6 @@ $movies = $query->fetchAll();
     </div>
   </div>
 </main>
+
+
+<?php include('inc/footer.php');
