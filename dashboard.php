@@ -4,12 +4,12 @@ include('inc/headerback.php');
 include('inc/pdo.php');
 include('inc/functions.php');
 
-$sql = "SELECT * FROM movies_full LIMIT 30";
+$sql = "SELECT * FROM movies_full LIMIT 100";
 $query = $pdo->prepare($sql);
 $query->execute();
 $movies = $query->fetchAll();
 
-$sql = "SELECT * FROM users LIMIT 30";
+$sql = "SELECT * FROM users LIMIT 100";
 $query = $pdo->prepare($sql);
 $query->execute();
 $users = $query->fetchAll();
@@ -27,7 +27,7 @@ $users = $query->fetchAll();
 
         <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4"><div class="chartjs-size-monitor" style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;"><div class="chartjs-size-monitor-expand" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div></div><div class="chartjs-size-monitor-shrink" style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;"><div style="position:absolute;width:200%;height:200%;left:0; top:0"></div></div></div>
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-            <h1 class="h2" id=stats>Statistiques d'affluence</h1>
+            <h1 class="h2" id=stats>Statistiques du site</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
             </div>
           </div>
@@ -42,8 +42,6 @@ $users = $query->fetchAll();
                   <th>ID</th>
                   <th>Titre</th>
                   <th>Année</th>
-                  <th>Genre(s)</th>
-                  <th>Realisateur(s)</th>
                   <th>Note</th>
                   <th>Action(s)</th>
                 </tr>
@@ -54,11 +52,10 @@ $users = $query->fetchAll();
                   <td><?php echo $movie['id']; ?> </td>
                   <td><?php echo $movie['title']; ?> </td>
                   <td><?php echo $movie['year']; ?></td>
-                  <td><?php echo $movie['genres']; ?></td>
-                  <td><?php echo $movie['directors']; ?></td>
                   <td><?php echo $movie['rating']; ?></td>
-                  <td><button class="btn btn-secondary my-2 my-sm-0 btn-sm" href="edit.php?id=<?php echo $movie['id']; ?>">Editer</button>
-                    <button class="btn btn-sm btn-danger my-2 my-sm-0" href="delete.php?id=<?php echo $movie['id']; ?>">Supprimer</button></td>
+                  <td><a class="btn btn-info my-2 my-sm-0 btn-sm" href="detail.php?id=<?php echo $movie['id']; ?>">Voir sur le site</a>
+                    <a class="btn btn-secondary my-2 my-sm-0 btn-sm" href="edit.php?id=<?php echo $movie['id']; ?>">Editer</a>
+                    <a class="btn btn-sm btn-danger my-2 my-sm-0" href="delete.php?id=<?php echo $movie['id']; ?>">Supprimer</a></td>
                 </tr>
               <?php } ?>
               </tbody>
@@ -83,8 +80,8 @@ $users = $query->fetchAll();
                   <td><?php echo $user['name'] ?></td>
                   <td><?php echo $user['password'] ?></td>
                   <td><?php echo $user['grade'] ?></td>
-                  <td><button class="btn btn-secondary my-2 my-sm-0 btn-sm" href="edit.php?id=<?php echo $movie['id']; ?>">Editer</button>
-                    <button class="btn btn-sm btn-danger my-2 my-sm-0" href="delete.php?id=<?php echo $movie['id']; ?>">Supprimer</button></td>
+                  <td><a class="btn btn-secondary my-2 my-sm-0 btn-sm" href="edit.php?id=<?php echo $movie['id']; ?>">Editer</a>
+                    <a class="btn btn-sm btn-danger my-2 my-sm-0" href="delete.php?id=<?php echo $movie['id']; ?>">Supprimer</a></td>
                   </tr>
               <?php } ?>
               </tbody>
