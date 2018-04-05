@@ -81,8 +81,8 @@ $users = $query->fetchAll();
                   <td><?php echo $user['name'] ?></td>
                   <td><?php echo $user['password'] ?></td>
                   <td><?php echo $user['grade'] ?></td>
-                  <td><a class="btn btn-secondary my-2 my-sm-0 btn-sm" href="inc/editusers.php?id=<?php echo $user['id']; ?>">Editer</a>
-                    <a class="btn btn-sm btn-danger my-2 my-sm-0" href="inc/deleteusers.php?id=<?php echo $user['id']; ?>">Supprimer</a></td>
+                  <td><a class="btn btn-secondary my-2 my-sm-0 btn-sm" href="editusers.php?id=<?php echo $user['id']; ?>">Editer</a>
+                    <a class="btn btn-sm btn-danger my-2 my-sm-0" data-toggle="modal" data-target="#exampleModalCenter">Supprimer</a></td>
                   </tr>
               <?php } ?>
               </tbody>
@@ -139,6 +139,7 @@ $users = $query->fetchAll();
     </script>
 
 
+    
 </body>
 
 
