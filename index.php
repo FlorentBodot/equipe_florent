@@ -36,7 +36,8 @@ $movies = $query->fetchAll();
             <p class="h5"><?php echo $movie['title']; ?></p>
             <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
-            <button href="detail.php?id=<?php echo $movie['id'] ?>" class="btn btn-sm btn-info">Voir les détails</button>
+            
+            <input type="button" value="Voir details" href="detail.php?id=<?php echo $movie['id']; ?>">
             </div>
             <small class="text-muted">Il y'a <?php echo $movie['created']; ?></small>
           </div>
