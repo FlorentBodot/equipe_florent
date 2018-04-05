@@ -13,6 +13,7 @@ $movies = $query->fetchAll();
 
 
 // print_r($movies);
+print_r($_SESSION);
 
 ?>
 

@@ -6,8 +6,8 @@ include('inc/pdo.php'); ?>
 $error = [];
 if(!empty($_POST['submitlogin'])) {
     // protection XSS
-    $name     = trim(strip_tags($_POST['name']));
-    $password  = trim(strip_tags($_POST['password']));
+    $name     = failleXss($_POST['name']);
+    $password  = failleXss($_POST['password']);
 
     ///////////////////////////////////////
     // Validation
@@ -19,16 +19,16 @@ if(!empty($_POST['submitlogin'])) {
         $query = $pdo->prepare($sql);
         $query->bindValue(':name',$name,PDO::PARAM_STR);
         $query->execute();
-        $user = $query->fetch();
+        $users = $query->fetch();
         if(!empty($user)) {
             	if(password_verify($password,$user['password'])) {
 
                     // connexion, password ok , user ok
                         $_SESSION['user'] = array(
-                            'id'     => $user['id'],
-                            'name' => $user['name'],
-                            'grade'   => $user['grade'],
-                            'ip'     => $_SERVER['REMOTE_ADDR']
+                            'id'       => $users['id'],
+                            'name'     => $users['name'],
+                            'grade'    => $users['grade'],
+                            'ip'       => $_SERVER['REMOTE_ADDR']
                         );
 
                         header('Location: index.php');
@@ -51,10 +51,10 @@ if(!empty($_POST['submitlogin'])) {
 </style>
 
 <form action="connection.php" method="post">
-<span class="error"><?php if(!empty($error['login'])){echo $error['login'];} ?></span>
 
     <label for="login"> Pseudo </label>
         <input type="text" name="name" value="<?php if(!empty($_POST['email'])){echo $_POST['email'];} ?>">
+        <span class="error"><?php if(!empty($error['login'])){echo $error['login'];} ?></span>
 
     <label for="password">Password</label>
         <input type="password" name="password" id="password" value="">
