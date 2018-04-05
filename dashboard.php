@@ -54,8 +54,8 @@ $users = $query->fetchAll();
                   <td><?php echo $movie['year']; ?></td>
                   <td><?php echo $movie['rating']; ?></td>
                   <td><a class="btn btn-info my-2 my-sm-0 btn-sm" href="detail.php?id=<?php echo $movie['id']; ?>">Voir sur le site</a>
-                    <a class="btn btn-secondary my-2 my-sm-0 btn-sm" href="edit.php?id=<?php echo $movie['id']; ?>">Editer</a>
-                    <a class="btn btn-sm btn-danger my-2 my-sm-0" href="delete.php?id=<?php echo $movie['id']; ?>">Supprimer</a></td>
+                    <a class="btn btn-secondary my-2 my-sm-0 btn-sm" href="editadmin.php?id=<?php echo $movie['id']; ?>">Editer</a>
+                    <a class="btn btn-sm btn-danger my-2 my-sm-0" href="deleteadmin.php?id=<?php echo $movie['id']; ?>">Supprimer</a></td>
                 </tr>
               <?php } ?>
               </tbody>
@@ -80,8 +80,8 @@ $users = $query->fetchAll();
                   <td><?php echo $user['name'] ?></td>
                   <td><?php echo $user['password'] ?></td>
                   <td><?php echo $user['grade'] ?></td>
-                  <td><a class="btn btn-secondary my-2 my-sm-0 btn-sm" href="edit.php?id=<?php echo $movie['id']; ?>">Editer</a>
-                    <a class="btn btn-sm btn-danger my-2 my-sm-0" href="delete.php?id=<?php echo $movie['id']; ?>">Supprimer</a></td>
+                  <td><a class="btn btn-secondary my-2 my-sm-0 btn-sm" href="edituseradmin.php?id=<?php echo $movie['id']; ?>">Editer</a>
+                    <a class="btn btn-sm btn-danger my-2 my-sm-0" href="deleteuseradmin.php?id=<?php echo $movie['id']; ?>">Supprimer</a></td>
                   </tr>
               <?php } ?>
               </tbody>
