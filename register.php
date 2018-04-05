@@ -6,10 +6,11 @@ $error = [];
 // formulaire soumis
 if(!empty($_POST['submitregister'])) {
   // faille xss
-    $name    = trim(strip_tags($_POST['name']));
+    $name      = trim(strip_tags($_POST['name']));
     $email     = trim(strip_tags($_POST['email']));
     $password1 = trim(strip_tags($_POST['password1']));
     $password2 = trim(strip_tags($_POST['password2']));
+
     /////////////////////////////
     // Validation
     ///////////////////////////////////
@@ -33,7 +34,7 @@ if(!empty($_POST['submitregister'])) {
       $error['name'] = 'Veuillez renseigner un name';
     }
 
-    // name
+    // mail
     if(!empty($email)) {
           if(filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
                 $error['email'] = 'email invalide';
@@ -64,39 +65,43 @@ if(!empty($_POST['submitregister'])) {
     ///////////////////////////////////
     if(count($error) == 0) {
         $hassPassword = password_hash($password1, PASSWORD_DEFAULT);
-        $token = generateRandomString(50);
 
         $sql = "INSERT INTO users (name,email,password,grade)
-                VALUES (:name,:email,:pass,'Membre')";
+                VALUES (:name,:email,:pass,:grade)";
         $query = $pdo->prepare($sql);
         $query->bindValue(':name',$name,PDO::PARAM_STR);
         $query->bindValue(':email',$email,PDO::PARAM_STR);
         $query->bindValue(':pass',$hassPassword,PDO::PARAM_STR);
-        $query->bindValue(':grade',$grade,PDO::PARAM_STR);
+        $query->bindValue(':grade','Membre',PDO::PARAM_STR);
         $query->execute();
         // redirection vers connexion
-        header('Location: connexion.php');
+        // header('Location: register.php');
   }
 }
 
 ?>
 <?php include('inc/header.php'); ?>
 
+<style>
+    label {display:block}
+</style>
+
 <form action="" method="post">
-  <label for="name">Name *</label>
-  <span class="error"><?php if(!empty($errors['name'])) { echo $errors['name']; } ?></span>
+  <label for="name">Name</label>
   <input type="text" name="name" value="<?php if(!empty($_POST['name'])) { echo $_POST['name']; } ?>">
+  <span class="error"><?php if(!empty($error['name'])) { echo $error['name']; } ?></span>
 
-  <label for="email">Email *</label>
-  <span class="error"><?php if(!empty($errors['email'])) { echo $errors['email']; } ?></span>
+  <label for="email">Email</label>
   <input type="text" name="email" value="<?php if(!empty($_POST['email'])) { echo $_POST['email']; } ?>">
+  <span class="error"><?php if(!empty($error['email'])) { echo $error['email']; } ?></span>
 
-  <label for="password1">Password *</label>
-  <span class="error"><?php if(!empty($errors['password'])) { echo $errors['password']; } ?></span>
-  <input type="text" name="password1" value="">
+  <label for="password1">Password</label>
+  <input type="password" name="password1" value="<?php if(!empty($_POST['password'])) { echo $_POST['password']; } ?>">
+  <span class="error"><?php if(!empty($error['password'])) { echo $error['password']; } ?></span>
 
-  <label for="password2">Confirm Password *</label>
-  <input type="text" name="password2" value="">
+  <label for="password2">Confirm Password</label>
+  <input type="password" name="password2" value="<?php if(!empty($_POST['password2'])) { echo $_POST['password2']; } ?>">
+  <span class="error"><?php if(!empty($error['password2'])) { echo $error['password2']; } ?></span>
 
   <input type="submit" name="submitregister" value="envoyer">
 </form>
