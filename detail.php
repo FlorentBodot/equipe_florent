@@ -30,6 +30,7 @@ include('inc/header.php'); ?>
 
 
 <div>
+<?php uploadDataPictures($movie['id']); ?>
 <p class="titre">Titre : <?php echo $movie['title']; ?> </p>
 <p class="titre">Paru en : <?php echo $movie['year']; ?> </p>
 <p class="auteur">Genre : <?php echo $movie['genres']; ?> </p>
