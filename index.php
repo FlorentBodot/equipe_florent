@@ -25,29 +25,27 @@ include('inc/header.php');
         </div>
       </section>
 
-      <div class="album py-5">
-        <div class="container">
-          <div class="row">
-          <?php foreach ($movies as $movie) { ?>
-            <div class="col-md-4">
+  <div class="album py-5">
+    <div class="container">
+      <div class="row">
+        <?php foreach ($movies as $movie) { ?>
+          <div class="col-md-4">
             <div class="card mb-4 box-shadow">
               <?php uploadDataPictures($movie['id']); ?>
-            <div class="card-body">
-            <p class="h5"><?php echo $movie['title']; ?></p>
-            <div class="d-flex justify-content-between align-items-center">
-            <div class="btn-group">
-            <a href="detail.php?id=<?php echo $movie['id'];?>">+ de détails</a>
-
+              <div class="card-body">
+                <p class="h5"><?php echo $movie['title']; ?></p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <a href="detail.php?id=<?php echo $movie['id']; ?>">+ de détails</a>
+                  </div>
+                  <small class="text-muted">Crée le <?php echo date('d/m/Y' . ' à ' . 'H:i', strtotime($movie['created'])); ?></small>
+                </div>
+              </div>
             </div>
-            <small class="text-muted">Crée le <?php echo date('d/m/Y'.' à '. 'H:i',strtotime($movie['created'])); ?></small>
           </div>
-        </div>
-
+        <?php 
+        } ?>
       </div>
     </div>
-          <?php } ?>
-
-          </div>
-        </div>
-      </div>
-    </main>
+  </div>
+</main>
