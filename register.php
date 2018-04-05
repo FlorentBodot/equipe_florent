@@ -7,10 +7,10 @@ $error = [];
 // formulaire soumis
 if(!empty($_POST['submitregister'])) {
   // faille xss
-    $name      = trim(strip_tags($_POST['name']));
-    $email     = trim(strip_tags($_POST['email']));
-    $password1 = trim(strip_tags($_POST['password1']));
-    $password2 = trim(strip_tags($_POST['password2']));
+    $name      = failleXss($_POST['name']);
+    $email     = failleXss($_POST['email']);
+    $password1 = failleXss($_POST['password1']);
+    $password2 = failleXss($_POST['password2']);
 
     /////////////////////////////
     // Validation
@@ -20,7 +20,7 @@ if(!empty($_POST['submitregister'])) {
           if(strlen($name) < 3) {
                 $error['name'] = 'min 3';
           } elseif(strlen($name) > 100) {
-              $error['name'] = 'max 100';
+                $error['name'] = 'max 100';
           } else {
                 $sql = "SELECT id FROM users WHERE name = :name";
                 $query = $pdo->prepare($sql);
@@ -76,7 +76,7 @@ if(!empty($_POST['submitregister'])) {
         $query->bindValue(':grade','Membre',PDO::PARAM_STR);
         $query->execute();
         // redirection vers connexion
-        // header('Location: register.php');
+        header('Location: register.php');
   }
 }
 

@@ -17,3 +17,6 @@ function debug($array)
     echo'</pre>';
 }
 
+function failleXss($a) {
+  return trim(strip_tags($a));
+}
