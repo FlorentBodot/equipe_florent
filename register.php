@@ -3,7 +3,9 @@
 
 
 <?php
-$error = [];
+$error = array();
+$success = false;
+
 // formulaire soumis
 if(!empty($_POST['submitregister'])) {
   // faille xss
@@ -65,14 +67,16 @@ if(!empty($_POST['submitregister'])) {
     // insert into nouvelle inscription
     ///////////////////////////////////
     if(count($error) == 0) {
+      $success = true;
+
         $hassPassword = password_hash($password1, PASSWORD_DEFAULT);
 
-        $sql = "INSERT INTO users (name,email,password,grade)
-                VALUES (:name,:email,:pass,:grade)";
+        $sql = "INSERT INTO users ( name, email ,  password, grade)
+                           VALUES (:name, :email , :password,   :grade)";
         $query = $pdo->prepare($sql);
         $query->bindValue(':name',$name,PDO::PARAM_STR);
         $query->bindValue(':email',$email,PDO::PARAM_STR);
-        $query->bindValue(':pass',$hassPassword,PDO::PARAM_STR);
+        $query->bindValue(':password',password_hash($password, PASSWORD_DEFAULT),PDO::PARAM_STR);
         $query->bindValue(':grade','Membre',PDO::PARAM_STR);
         $query->execute();
         // redirection vers connexion
@@ -83,6 +87,9 @@ if(!empty($_POST['submitregister'])) {
 ?>
 <?php include('inc/header.php'); ?>
 
+<style>
+    label {display:block}
+</style>
 
 <form action="" method="post">
   <label for="name">Name</label>
@@ -101,7 +108,7 @@ if(!empty($_POST['submitregister'])) {
   <input type="password" name="password2" value="<?php if(!empty($_POST['password2'])) { echo $_POST['password2']; } ?>">
   <span class="error"><?php if(!empty($error['password2'])) { echo $error['password2']; } ?></span>
   
-  <input class="machin" type="submit" name="submitregister" value="envoyer">
+  <input class="machin" type="submit" name="submitregister" value="Envoyer" formnovalidate>
 </form>
 
 
