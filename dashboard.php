@@ -4,12 +4,12 @@ include('inc/headerback.php');
 include('inc/pdo.php');
 include('inc/functions.php');
 
-$sql = "SELECT * FROM movies_full LIMIT 30";
+$sql = "SELECT * FROM movies_full LIMIT 100";
 $query = $pdo->prepare($sql);
 $query->execute();
 $movies = $query->fetchAll();
 
-$sql = "SELECT * FROM users LIMIT 30";
+$sql = "SELECT * FROM users LIMIT 100";
 $query = $pdo->prepare($sql);
 $query->execute();
 $users = $query->fetchAll();
@@ -42,8 +42,6 @@ $users = $query->fetchAll();
                   <th>ID</th>
                   <th>Titre</th>
                   <th>Année</th>
-                  <th>Genre(s)</th>
-                  <th>Realisateur(s)</th>
                   <th>Note</th>
                   <th>Action(s)</th>
                 </tr>
@@ -54,10 +52,9 @@ $users = $query->fetchAll();
                   <td><?php echo $movie['id']; ?> </td>
                   <td><?php echo $movie['title']; ?> </td>
                   <td><?php echo $movie['year']; ?></td>
-                  <td><?php echo $movie['genres']; ?></td>
-                  <td><?php echo $movie['directors']; ?></td>
                   <td><?php echo $movie['rating']; ?></td>
-                  <td><button class="btn btn-secondary my-2 my-sm-0 btn-sm" href="edit.php?id=<?php echo $movie['id']; ?>">Editer</button>
+                  <td><button class="btn btn-info my-2 my-sm-0 btn-sm" href="index.php?id=<?php echo $movie['id']; ?>">Voir sur le site</button>
+                    <button class="btn btn-secondary my-2 my-sm-0 btn-sm" href="edit.php?id=<?php echo $movie['id']; ?>">Editer</button>
                     <button class="btn btn-sm btn-danger my-2 my-sm-0" href="delete.php?id=<?php echo $movie['id']; ?>">Supprimer</button></td>
                 </tr>
               <?php } ?>
