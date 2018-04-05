@@ -1,5 +1,6 @@
 <?php
 
+include('inc/header.php');
 include('inc/pdo.php');
 include('inc/functions.php');
 
@@ -13,7 +14,6 @@ $movies = $query->fetchAll();
 
 // print_r($movies);
 
-include('inc/header.php');
 ?>
 
 <main role="main">
