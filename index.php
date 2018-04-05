@@ -43,9 +43,12 @@ $movies = $query->fetchAll();
               </div>
             </div>
           </div>
-        <?php 
+        <?php
         } ?>
       </div>
     </div>
   </div>
 </main>
+
+
+<?php include('inc/footer.php');

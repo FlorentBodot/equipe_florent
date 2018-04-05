@@ -13,6 +13,7 @@ $sql = "SELECT * FROM users LIMIT 100";
 $query = $pdo->prepare($sql);
 $query->execute();
 $users = $query->fetchAll();
+
 ?>
 
 
@@ -34,7 +35,7 @@ $users = $query->fetchAll();
 
           <canvas class="my-4 chartjs-render-monitor" id="myChart" width="819" height="345" style="display: block; width: 819px; height: 345px;"></canvas>
 
-          <h2 id=gestionf>Gestions des films</h2>
+          <h2 id=gestionf>Gestion des films</h2>
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
@@ -54,14 +55,14 @@ $users = $query->fetchAll();
                   <td><?php echo $movie['year']; ?></td>
                   <td><?php echo $movie['rating']; ?></td>
                   <td><a class="btn btn-info my-2 my-sm-0 btn-sm" href="detail.php?id=<?php echo $movie['id']; ?>">Voir sur le site</a>
-                    <a class="btn btn-secondary my-2 my-sm-0 btn-sm" href="edit.php?id=<?php echo $movie['id']; ?>">Editer</a>
-                    <a class="btn btn-sm btn-danger my-2 my-sm-0" href="delete.php?id=<?php echo $movie['id']; ?>">Supprimer</a></td>
+                    <a class="btn btn-secondary my-2 my-sm-0 btn-sm" href="editmovie.php?id=<?php echo $movie['id']; ?>">Editer</a>
+                    <a class="btn btn-sm btn-danger my-2 my-sm-0" href="deletemovie.php?id=<?php echo $movie['id']; ?>">Supprimer</a></td>
                 </tr>
               <?php } ?>
               </tbody>
             </table>
           </div>
-          <h2 id="gestionu">Gestions des utilisateurs</h2>
+          <h2 id="gestionu">Gestion des utilisateurs</h2>
           <div class="table-responsive">
             <table class="table table-striped table-sm">
               <thead>
@@ -80,8 +81,8 @@ $users = $query->fetchAll();
                   <td><?php echo $user['name'] ?></td>
                   <td><?php echo $user['password'] ?></td>
                   <td><?php echo $user['grade'] ?></td>
-                  <td><a class="btn btn-secondary my-2 my-sm-0 btn-sm" href="edit.php?id=<?php echo $movie['id']; ?>">Editer</a>
-                    <a class="btn btn-sm btn-danger my-2 my-sm-0" href="delete.php?id=<?php echo $movie['id']; ?>">Supprimer</a></td>
+                  <td><a class="btn btn-secondary my-2 my-sm-0 btn-sm" href="editusers.php?id=<?php echo $user['id']; ?>">Editer</a>
+                    <a class="btn btn-sm btn-danger my-2 my-sm-0" data-toggle="modal" data-target="#exampleModalCenter">Supprimer</a></td>
                   </tr>
               <?php } ?>
               </tbody>
@@ -138,6 +139,7 @@ $users = $query->fetchAll();
     </script>
 
 
+    
 </body>
 
 
