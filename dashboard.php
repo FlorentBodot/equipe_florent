@@ -45,7 +45,10 @@ $movies = $query->fetchAll();
                   <th>ID</th>
                   <th>Titre</th>
                   <th>Année</th>
+                  <th>Genre(s)</th>
+                  <th>Realisateur(s)</th>
                   <th>Note</th>
+                  <th>Action(s)</th>
                 </tr>
               </thead>
               <tbody>
@@ -54,7 +57,11 @@ $movies = $query->fetchAll();
                   <td><?php echo $movie['id']; ?> </td>
                   <td><?php echo $movie['title']; ?> </td>
                   <td><?php echo $movie['year']; ?></td>
+                  <td><?php echo $movie['genres']; ?></td>
+                  <td><?php echo $movie['directors']; ?></td>
                   <td><?php echo $movie['rating']; ?></td>
+                  <td><button class="btn btn-secondary my-2 my-sm-0 btn-sm">Editer</button>
+                    <button class="btn btn-sm btn-danger my-2 my-sm-0">Supprimer</button></td>
                 </tr>
               <?php } ?>
               </tbody>
