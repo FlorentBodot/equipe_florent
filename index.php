@@ -1,6 +1,5 @@
 <?php
 
-include('inc/header.php');
 include('inc/pdo.php');
 include('inc/functions.php');
 
@@ -14,6 +13,7 @@ $movies = $query->fetchAll();
 
 // print_r($movies);
 
+include('inc/header.php');
 ?>
 
 <main role="main">
@@ -37,7 +37,7 @@ $movies = $query->fetchAll();
             <div class="d-flex justify-content-between align-items-center">
             <div class="btn-group">
             <a href="detail.php?id=<?php echo $movie['id'];?>">+ de détails</a>
-           
+
             </div>
             <small class="text-muted">Crée le <?php echo date('d/m/Y'.' à '. 'H:i',strtotime($movie['created'])); ?></small>
           </div>
