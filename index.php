@@ -19,7 +19,7 @@ print_r($_SESSION);
 
 <main role="main">
 
-      <section class="jumbotron text-center">
+      <section class="jumbotron text-center ">
         <div class="container">
           <h1 class="display-4">Bienvenue sur InTheMovie</h1>
           <p class="lead text-muted">Vous retrouverez tout vos films favoris.</p>
@@ -32,7 +32,9 @@ print_r($_SESSION);
         <?php foreach ($movies as $movie) { ?>
           <div class="col-md-4">
             <div class="card mb-4 box-shadow">
-              <?php uploadDataPictures($movie['id']); ?>
+              <a href="detail.php?id=<?php echo $movie['id']; ?>">
+                <?php uploadDataPictures($movie['id']); ?>
+              </a>
               <div class="card-body">
                 <p class="h5"><?php echo $movie['title']; ?></p>
                 <div class="d-flex justify-content-between align-items-center">
