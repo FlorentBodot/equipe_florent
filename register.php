@@ -88,9 +88,6 @@ if(!empty($_POST['submitregister'])) {
 ?>
 <?php include('inc/header.php'); ?>
 
-<style>
-    label {display:block}
-</style>
 
 <form action="" method="post">
   <label for="name">Name</label>
@@ -110,7 +107,10 @@ if(!empty($_POST['submitregister'])) {
   <span class="error"><?php if(!empty($error['password2'])) { echo $error['password2']; } ?></span>
   
   <input class="machin" type="submit" name="submitregister" value="Envoyer" formnovalidate>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 953d46fe90f60875aef034394a63e0a2dcbbda08
 </form>
 
 

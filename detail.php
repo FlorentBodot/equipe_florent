@@ -30,19 +30,32 @@ include('inc/header.php'); ?>
 
 
 <div>
-<?php uploadDataPictures($movie['id']); ?>
-<p class="titre">Titre : <?php echo $movie['title']; ?> </p>
-<p class="titre">Paru en : <?php echo $movie['year']; ?> </p>
-<p class="auteur">Genre : <?php echo $movie['genres']; ?> </p>
-<p class="auteur">Réalisateur : <?php echo $movie['directors']; ?> </p>
-<p class="auteur">Acteur(s) : <?php echo $movie['cast']; ?> </p>
-<p class="contenu">Scénariste(s) : <?php echo $movie['writers']; ?> </p>
-<p class="contenu">Durée: <?php echo $movie['runtime']; ?> min</p>
-<p class="status">Synopsis : <?php echo $movie['plot']; ?> </p>                    
-<br>             
+    <div class="content">
+        <div class="picture"><?php uploadDataPictures($movie['id']); ?></div>
+        <div class="details">
+            <p class="titre">Titre : <?php echo $movie['title']; ?> </p>
+            <p class="titre">Paru en : <?php echo $movie['year']; ?> </p>
+            <p class="auteur">Genre : <?php echo $movie['genres']; ?> </p>
+            <p class="auteur">Réalisateur : <?php echo $movie['directors']; ?> </p>
+            <p class="auteur">Acteur(s) : <?php echo $movie['cast']; ?> </p>
+            <p class="contenu">Scénariste(s) : <?php echo $movie['writers']; ?> </p>
+            <p class="contenu">Durée: <?php echo $movie['runtime']; ?> min</p>
+            <p class="status">Synopsis : <?php echo $movie['plot']; ?> </p> 
+            <br>     
+        </div>       
+    </div>                 
 </div>
 
 
+<footer class="footdetails">
+      <div class="container">
+        <p class="float-right">
+          <a href="#">Retour en haut</a>
+        </p>
+        <p>Album example is © Bootstrap, but please download and customize it for yourself!</p>
+        <p>New to Bootstrap? <a href="../../">Visit the homepage</a> or read our <a href="../../getting-started/">getting started guide</a>.</p>
+      </div>
+    </footer>
 
 
 
@@ -50,5 +63,5 @@ include('inc/header.php'); ?>
 
 
 
-<?php
-include('inc/footer.php');
+
+
