@@ -30,17 +30,23 @@ include('inc/header.php'); ?>
 
 
 <div>
-<?php uploadDataPictures($movie['id']); ?>
-<p class="titre">Titre : <?php echo $movie['title']; ?> </p>
-<p class="titre">Paru en : <?php echo $movie['year']; ?> </p>
-<p class="auteur">Genre : <?php echo $movie['genres']; ?> </p>
-<p class="auteur">Réalisateur : <?php echo $movie['directors']; ?> </p>
-<p class="auteur">Acteur(s) : <?php echo $movie['cast']; ?> </p>
-<p class="contenu">Scénariste(s) : <?php echo $movie['writers']; ?> </p>
-<p class="contenu">Durée: <?php echo $movie['runtime']; ?> min</p>
-<p class="status">Synopsis : <?php echo $movie['plot']; ?> </p>                    
-<br>             
+    <div class="content">
+        <div class="picture"><?php uploadDataPictures($movie['id']); ?></div>
+        <div class="details">
+            <p class="titre">Titre : <?php echo $movie['title']; ?> </p>
+            <p class="titre">Paru en : <?php echo $movie['year']; ?> </p>
+            <p class="auteur">Genre : <?php echo $movie['genres']; ?> </p>
+            <p class="auteur">Réalisateur : <?php echo $movie['directors']; ?> </p>
+            <p class="auteur">Acteur(s) : <?php echo $movie['cast']; ?> </p>
+            <p class="contenu">Scénariste(s) : <?php echo $movie['writers']; ?> </p>
+            <p class="contenu">Durée: <?php echo $movie['runtime']; ?> min</p>
+            <p class="status">Synopsis : <?php echo $movie['plot']; ?> </p> 
+            <br>     
+        </div>       
+    </div>                 
 </div>
+
+
 
 
 

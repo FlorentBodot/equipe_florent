@@ -5,3 +5,28 @@ label {
 .bouton{
     padding-left: 50%
 }
+
+.content {
+    display: inline;
+}
+
+.picture{
+    width: 25%;
+    float: left;
+    margin-left: 10%;
+    margin-top: 5%;
+    
+}
+
+.details {
+    width: 25%;
+    float: right;
+    margin-right: 30%;
+    margin-top: 10%;
+}
+
+footer{
+    position: absolute;
+    bottom: 0;
+}
+
