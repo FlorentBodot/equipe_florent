@@ -93,23 +93,25 @@ if(!empty($_POST['submitregister'])) {
     label {display:block}
 </style>
 <div class="register">
+  <h1 style="margin-left:7%; margin-top:5%; margin-bottom:2%;">Inscription</h1>
+
   <form action="" method="post" >
-    <div class="name"><label for="name">Name</label></div>
-    <input class="bouton" type="text" name="name" value="<?php if(!empty($_POST['name'])) { echo $_POST['name']; } ?> ">
+    <label for="name"></label>
+    <input class="bouton" type="text" name="name" value="<?php if(!empty($_POST['name'])) { echo $_POST['name']; } ?>" placeholder="Votre Nom">
     <span class="error"><?php if(!empty($error['name'])) { echo $error['name']; } ?></span>
 
-    <div class="name"><label for="email">Email</label></div>
-    <input class="bouton" type="text" name="email" value="<?php if(!empty($_POST['email'])) { echo $_POST['email']; } ?>">
+    <label for="email"></label>
+    <input class="bouton" type="text" name="email" value="<?php if(!empty($_POST['email'])) { echo $_POST['email']; } ?>" placeholder="Votre Email">
     <span class="error"><?php if(!empty($error['email'])) { echo $error['email']; } ?></span>
 
-    <div class="name"><label for="password1">Password</label></div>
-    <input class="bouton" type="password" name="password1" value="<?php if(!empty($_POST['password'])) { echo $_POST['password']; } ?>">
+    <label for="password1"></label>
+    <input class="bouton" type="password" name="password1" value="<?php if(!empty($_POST['password'])) { echo $_POST['password']; } ?>" placeholder="Saisissez votre mot de pass">
     <span class="error"><?php if(!empty($error['password'])) { echo $error['password']; } ?></span>
 
-    <div class="name"><label for="password2">Confirm Password</label></div>
-    <input class="bouton" type="password" name="password2" value="<?php if(!empty($_POST['password2'])) { echo $_POST['password2']; } ?>">
+    <label for="password2"></label>
+    <input class="bouton" type="password" name="password2" value="<?php if(!empty($_POST['password2'])) { echo $_POST['password2']; } ?>" placeholder="Saisissez votre mot de pass de nouveau">
     <span class="error"><?php if(!empty($error['password2'])) { echo $error['password2']; } ?></span>
-
+    <br>
     <input class="boutonsubmit" type="submit" name="submitregister" value="envoyer">
   </form>
 </div>
@@ -120,4 +122,4 @@ if(!empty($_POST['submitregister'])) {
 
 
 
-<?php include('inc/footer.php'); ?>
+<?php include('inc/footersimple.php'); ?>

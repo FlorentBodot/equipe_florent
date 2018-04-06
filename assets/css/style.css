@@ -8,12 +8,13 @@ label {
 
 
 .boutonsubmit{
-    bottom: 0;
+    width: 30%;
 }
 
 .bouton {
     
-     width: 30%;
+    width: 30%;
+    margin-top: 0%;
 }
 
 
