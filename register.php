@@ -92,31 +92,27 @@ if(!empty($_POST['submitregister'])) {
 <style>
     label {display:block}
 </style>
+<div class="register">
+  <form action="" method="post" >
+    <div class="name"><label for="name">Name</label></div>
+    <input class="bouton" type="text" name="name" value="<?php if(!empty($_POST['name'])) { echo $_POST['name']; } ?> ">
+    <span class="error"><?php if(!empty($error['name'])) { echo $error['name']; } ?></span>
 
-<form action="" method="post">
-  <label for="name">Name</label>
-  <input class="bouton" type="text" name="name" value="<?php if(!empty($_POST['name'])) { echo $_POST['name']; } ?>">
-  <span class="error"><?php if(!empty($error['name'])) { echo $error['name']; } ?></span>
+    <div class="name"><label for="email">Email</label></div>
+    <input class="bouton" type="text" name="email" value="<?php if(!empty($_POST['email'])) { echo $_POST['email']; } ?>">
+    <span class="error"><?php if(!empty($error['email'])) { echo $error['email']; } ?></span>
 
-  <label for="email">Email</label>
-  <input class="bouton" type="text" name="email" value="<?php if(!empty($_POST['email'])) { echo $_POST['email']; } ?>">
-  <span class="error"><?php if(!empty($error['email'])) { echo $error['email']; } ?></span>
+    <div class="name"><label for="password1">Password</label></div>
+    <input class="bouton" type="password" name="password1" value="<?php if(!empty($_POST['password'])) { echo $_POST['password']; } ?>">
+    <span class="error"><?php if(!empty($error['password'])) { echo $error['password']; } ?></span>
 
-  <label for="password1">Password</label>
-  <input class="bouton" type="password" name="password1" value="<?php if(!empty($_POST['password'])) { echo $_POST['password']; } ?>">
-  <span class="error"><?php if(!empty($error['password'])) { echo $error['password']; } ?></span>
+    <div class="name"><label for="password2">Confirm Password</label></div>
+    <input class="bouton" type="password" name="password2" value="<?php if(!empty($_POST['password2'])) { echo $_POST['password2']; } ?>">
+    <span class="error"><?php if(!empty($error['password2'])) { echo $error['password2']; } ?></span>
 
-  <label for="password2">Confirm Password</label>
-  <input class="bouton" type="password" name="password2" value="<?php if(!empty($_POST['password2'])) { echo $_POST['password2']; } ?>">
-  <span class="error"><?php if(!empty($error['password2'])) { echo $error['password2']; } ?></span>
-<<<<<<< HEAD
-  
-  <input class="machin" type="submit" name="submitregister" value="Envoyer" formnovalidate>
-=======
-
-  <input class="bouton" type="submit" name="submitregister" value="envoyer">
->>>>>>> 7cf426b88d7f5dcdb36c12c981aaf767c655cbbd
-</form>
+    <input class="boutonsubmit" type="submit" name="submitregister" value="envoyer">
+  </form>
+</div>
 
 
 
