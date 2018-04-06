@@ -112,6 +112,7 @@ if(!empty($_POST['submitregister'])) {
     <input class="bouton" type="password" name="password2" value="<?php if(!empty($_POST['password2'])) { echo $_POST['password2']; } ?>" placeholder="Saisissez votre mot de pass de nouveau">
     <span class="error"><?php if(!empty($error['password2'])) { echo $error['password2']; } ?></span>
     <br>
+    <br>
     <input class="boutonsubmit" type="submit" name="submitregister" value="envoyer">
   </form>
 </div>
