@@ -1,4 +1,4 @@
-<footer class="text-muted">
+<footer class="text-muted bg-info">
       <div class="container">
         <p class="float-right">
           <a href="#">Retour en haut</a>
