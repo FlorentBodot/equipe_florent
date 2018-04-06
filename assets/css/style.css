@@ -23,10 +23,13 @@ label {
     float: right;
     margin-right: 30%;
     margin-top: 10%;
+   
 }
 
 .footdetails{
     position: absolute;
     bottom: 0;
+    
+    margin-left: 25%;
 }
 
