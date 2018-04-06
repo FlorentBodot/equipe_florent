@@ -82,24 +82,33 @@ if(!empty($_POST['submitregister'])) {
 ?>
 <?php include('inc/header.php'); ?>
 
-<form action="" method="post">
-  <label for="name">Name *</label>
-  <span class="error"><?php if(!empty($errors['name'])) { echo $errors['name']; } ?></span>
-  <input type="text" name="name" value="<?php if(!empty($_POST['name'])) { echo $_POST['name']; } ?>">
+<style>
+    label {display:block}
+</style>
+<div class="register">
+  
+  <form action="" method="post">
+    <h1 style="margin-top:5%; margin-bottom:2%; margin-left:2%">Edition de l'utilisateur</h1>
 
-  <label for="email">Email *</label>
-  <span class="error"><?php if(!empty($errors['email'])) { echo $errors['email']; } ?></span>
-  <input type="text" name="email" value="<?php if(!empty($_POST['email'])) { echo $_POST['email']; } ?>">
+    <label for="name"></label>
+    <span class="error"><?php if(!empty($errors['name'])) { echo $errors['name']; } ?></span>
+    <input class="bouton" type="text" name="name" value="<?php if(!empty($_POST['name'])) { echo $_POST['name']; } ?>" placeholder="Name">
 
-  <label for="password1">Password *</label>
-  <span class="error"><?php if(!empty($errors['password'])) { echo $errors['password']; } ?></span>
-  <input type="text" name="password1" value="">
+    <label for="email"></label>
+    <span class="error"><?php if(!empty($errors['email'])) { echo $errors['email']; } ?></span>
+    <input class="bouton" type="text" name="email" value="<?php if(!empty($_POST['email'])) { echo $_POST['email']; } ?>" placeholder="Email">
 
-  <label for="password2">Confirm Password *</label>
-  <input type="text" name="password2" value="">
+    <label for="password1"></label>
+    <span class="error"><?php if(!empty($errors['password'])) { echo $errors['password']; } ?></span>
+    <input class="bouton" type="text" name="password1" value="" placeholder="Password">
 
-  <input type="submit" name="submitregister" value="envoyer">
-</form>
+    <label for="password2"></label>
+    <input class="bouton" type="text" name="password2" value="" placeholder="RePassword">
+    <br>
+    <br>
+    <input class="boutonsubmit" type="submit" name="submitregister" value="envoyer">
+  </form>
+</div>
 
 
 
@@ -107,4 +116,4 @@ if(!empty($_POST['submitregister'])) {
 
 
 
-<?php include('inc/footer.php'); ?>
+<?php include('inc/footersimple.php'); ?>

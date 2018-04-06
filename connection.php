@@ -50,10 +50,10 @@ debug($error);
     label {display:block}
 </style>
 <div class="register">
-  <h1 style="margin-left:7%; margin-top:5%; margin-bottom:2%;">Connection</h1>
 
     <form action="connection.php" method="post">
         <span class="error"><?php if(!empty($error['login'])){echo $error['login'];} ?></span>
+        <h1 style=" margin-top:5%; margin-bottom:2%; margin-left:5%;">Connectez-vous</h1>
 
         <label for="login"></label>
         <input class="bouton" type="text" name="name" id="name" value="<?php if(!empty($_POST['email'])){echo $_POST['email'];} ?>" placeholder="Pseudo">

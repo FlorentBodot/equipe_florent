@@ -93,9 +93,10 @@ if(!empty($_POST['submitregister'])) {
     label {display:block}
 </style>
 <div class="register">
-  <h1 style="margin-left:7%; margin-top:5%; margin-bottom:2%;">Inscription</h1>
-
+  
   <form action="" method="post" >
+    <h1 style="margin-top:5%; margin-bottom:2%; margin-left:8%">Inscription</h1>
+
     <label for="name"></label>
     <input class="bouton" type="text" name="name" value="<?php if(!empty($_POST['name'])) { echo $_POST['name']; } ?>" placeholder="Votre Nom">
     <span class="error"><?php if(!empty($error['name'])) { echo $error['name']; } ?></span>
