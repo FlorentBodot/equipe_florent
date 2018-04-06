@@ -1,9 +1,10 @@
 <?php 
 session_start();
-include('inc/pdo.php');
-include('inc/functions.php'); 
+include('inc/pdo.php'); ?>
+<?php include('inc/functions.php'); ?>
 
 
+<?php
 $error = array();
 $success = false;
 
@@ -88,35 +89,37 @@ if(!empty($_POST['submitregister'])) {
 ?>
 <?php include('inc/header.php'); ?>
 
+<style>
+    label {display:block}
+</style>
+<div class="register">
+  <h1 style="margin-left:7%; margin-top:5%; margin-bottom:2%;">Inscription</h1>
 
-<form action="" method="post">
-  <label for="name">Name</label>
-  <input class="bouton" type="text" name="name" value="<?php if(!empty($_POST['name'])) { echo $_POST['name']; } ?>">
-  <span class="error"><?php if(!empty($error['name'])) { echo $error['name']; } ?></span>
+  <form action="" method="post" >
+    <label for="name"></label>
+    <input class="bouton" type="text" name="name" value="<?php if(!empty($_POST['name'])) { echo $_POST['name']; } ?>" placeholder="Votre Nom">
+    <span class="error"><?php if(!empty($error['name'])) { echo $error['name']; } ?></span>
 
-  <label for="email">Email</label>
-  <input class="bouton" type="text" name="email" value="<?php if(!empty($_POST['email'])) { echo $_POST['email']; } ?>">
-  <span class="error"><?php if(!empty($error['email'])) { echo $error['email']; } ?></span>
+    <label for="email"></label>
+    <input class="bouton" type="text" name="email" value="<?php if(!empty($_POST['email'])) { echo $_POST['email']; } ?>" placeholder="Votre Email">
+    <span class="error"><?php if(!empty($error['email'])) { echo $error['email']; } ?></span>
 
-  <label for="password1">Password</label>
-  <input class="bouton" type="password" name="password1" value="<?php if(!empty($_POST['password'])) { echo $_POST['password']; } ?>">
-  <span class="error"><?php if(!empty($error['password'])) { echo $error['password']; } ?></span>
+    <label for="password1"></label>
+    <input class="bouton" type="password" name="password1" value="<?php if(!empty($_POST['password'])) { echo $_POST['password']; } ?>" placeholder="Saisissez votre mot de pass">
+    <span class="error"><?php if(!empty($error['password'])) { echo $error['password']; } ?></span>
 
-  <label for="password2">Confirm Password</label>
-  <input class="bouton" type="password" name="password2" value="<?php if(!empty($_POST['password2'])) { echo $_POST['password2']; } ?>">
-  <span class="error"><?php if(!empty($error['password2'])) { echo $error['password2']; } ?></span>
-  
-  <input class="machin" type="submit" name="submitregister" value="Envoyer" formnovalidate>
-<<<<<<< HEAD
-
-=======
->>>>>>> 953d46fe90f60875aef034394a63e0a2dcbbda08
-</form>
-
-
-
-
+    <label for="password2"></label>
+    <input class="bouton" type="password" name="password2" value="<?php if(!empty($_POST['password2'])) { echo $_POST['password2']; } ?>" placeholder="Saisissez votre mot de pass de nouveau">
+    <span class="error"><?php if(!empty($error['password2'])) { echo $error['password2']; } ?></span>
+    <br>
+    <input class="boutonsubmit" type="submit" name="submitregister" value="envoyer">
+  </form>
+</div>
 
 
 
-<?php include('inc/footer.php'); ?>
+
+
+
+
+<?php include('inc/footersimple.php'); ?>

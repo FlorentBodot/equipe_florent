@@ -1,10 +1,28 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> 62cb5117c5bc8de9348c3f9fef4f2860ec62ee16
 label {
     display: block;
     padding-left: 50%;
 }
-.bouton{
-    padding-left: 50%
+
+/* page register */
+
+
+.boutonsubmit{
+    width: 30%;
 }
+
+.bouton {
+    
+    width: 30%;
+    margin-top: 0%;
+}
+
+
+/* page detail */
+
 
 .content {
     display: inline;
@@ -14,7 +32,7 @@ label {
     width: 25%;
     float: left;
     margin-left: 10%;
-    margin-top: 5%;
+    margin-top: 10%;
     
 }
 
@@ -29,7 +47,27 @@ label {
 .footdetails{
     position: absolute;
     bottom: 0;
-    
     margin-left: 25%;
 }
 
+<<<<<<< HEAD
+=======
+
+/* page connection */
+
+.register {
+    width: 100%;
+    margin-left: 30%;
+    position: relative;
+    float: center;
+   
+    
+    
+}
+
+.name {
+    position: relative;
+    margin-right: 100%;
+}
+
+>>>>>>> 62cb5117c5bc8de9348c3f9fef4f2860ec62ee16
