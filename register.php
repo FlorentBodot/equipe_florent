@@ -1,4 +1,6 @@
-<?php include('inc/pdo.php'); ?>
+<?php 
+session_start();
+include('inc/pdo.php'); ?>
 <?php include('inc/functions.php'); ?>
 
 
