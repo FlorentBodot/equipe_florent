@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="fr" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -23,12 +22,13 @@
 
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="search" placeholder="Rechercher un film" aria-label="Search">
-          <?php if(isLogged()) { ?>
-                    <li><a href="deconnexion.php">Deconnexion</a></li>
-          <?php } else { ?>
-                    <a class="btn btn-outline-light my-2 my-sm-0" href="register.php">Inscrivez-vous</a>
-                    <a class="btn btn-outline-light my-2 my-sm-0" href="connection.php">Connectez-vous</a>
-          <?php } ?>
-        </form>
+
+          <a class="btn btn-outline-light my-2 my-sm-0" href="register.php">Inscrivez-vous</a>
+          <li class="navbar navbar-expand-lg bg-info navbar-dark">
+            <a class="btn btn-outline-light my-2 my-sm-0" href="connection.php">Connectez-vous</a>
+            </li>
+          </form>
 
       </nav>
+  </body>
+</html>
