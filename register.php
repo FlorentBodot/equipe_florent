@@ -1,10 +1,9 @@
 <?php 
 session_start();
-include('inc/pdo.php'); ?>
-<?php include('inc/functions.php'); ?>
+include('inc/pdo.php');
+include('inc/functions.php'); 
 
 
-<?php
 $error = array();
 $success = false;
 
@@ -109,13 +108,9 @@ if(!empty($_POST['submitregister'])) {
   <label for="password2">Confirm Password</label>
   <input class="bouton" type="password" name="password2" value="<?php if(!empty($_POST['password2'])) { echo $_POST['password2']; } ?>">
   <span class="error"><?php if(!empty($error['password2'])) { echo $error['password2']; } ?></span>
-<<<<<<< HEAD
   
   <input class="machin" type="submit" name="submitregister" value="Envoyer" formnovalidate>
-=======
 
-  <input class="bouton" type="submit" name="submitregister" value="envoyer">
->>>>>>> 7cf426b88d7f5dcdb36c12c981aaf767c655cbbd
 </form>
 
 

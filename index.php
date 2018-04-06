@@ -1,6 +1,5 @@
 <?php
 session_start();
-include('inc/header.php');
 include('inc/pdo.php');
 include('inc/functions.php');
 
@@ -13,7 +12,8 @@ $movies = $query->fetchAll();
 
 
 // print_r($movies);
-print_r($_SESSION);
+include('inc/header.php');
+debug($_SESSION);
 
 ?>
 

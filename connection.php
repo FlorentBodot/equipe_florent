@@ -51,9 +51,9 @@ debug($error);
 </style>
 
 <form action="connection.php" method="post">
-<span class="error"><?php if(!empty($error['login'])){echo $error['login'];} ?></span>
+<span class="error"><?php if(!empty($error['name'])){echo $error['name'];} ?></span>
 
-    <label for="login"> Pseudo </label>
+    <label for="pseudo"> Pseudo </label>
         <input type="text" name="name" id="name" value="<?php if(!empty($_POST['email'])){echo $_POST['email'];} ?>">
 
     <label for="password">Password</label>
