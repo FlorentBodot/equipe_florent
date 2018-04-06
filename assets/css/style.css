@@ -1,0 +1,38 @@
+<<<<<<< HEAD
+=======
+label {
+    display: block;
+    padding-left: 50%;
+}
+.bouton{
+    padding-left: 50%
+}
+
+.content {
+    display: inline;
+}
+
+.picture{
+    width: 25%;
+    float: left;
+    margin-left: 10%;
+    margin-top: 5%;
+    
+}
+
+.details {
+    width: 25%;
+    float: right;
+    margin-right: 30%;
+    margin-top: 10%;
+   
+}
+
+.footdetails{
+    position: absolute;
+    bottom: 0;
+    
+    margin-left: 25%;
+}
+
+>>>>>>> 6f30087c294f58e76c64e746bcfd4155c6e7945c

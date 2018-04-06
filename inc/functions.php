@@ -4,9 +4,10 @@ function uploadDataPictures( $id)
 {
   $chemin = 'posters/' . $id . '.jpg';
   if (file_exists($chemin)) { ?>
-    <img class="card-img-top" src="posters/<?php echo $id ?>.jpg" alt=""> <?php
+    <img class="card-img-top" src="posters/<?php echo $id ?>.jpg" alt=""
+    style="height: 320px; width: 100%; display: block;"> <?php
 } else { ?>
-    <img class="card-img-top" src="https://www.xl6.com/images/grande_image_inexistante.png" alt="" style="height: 225px; width: 100%; display: block;"><?php
+    <img class="card-img-top" src="https://www.xl6.com/images/grande_image_inexistante.png" alt="" style="height: 320px; width: 100%; display: block;"><?php
   }
 }
 
